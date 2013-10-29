@@ -15,6 +15,7 @@ opposite(P1,P2) :- place(P1,C1), place(P2,C2), C1 = (C2 + 4) \ 8.
 between(P,P1,P2) :- on_left(P1,P), on_left(P,P2).
 between_couple(P) :- between(P,P1,P2), couple(P1,P2).
 between_men(P) :- between(P,P1,P2), man(P1), man(P2).
+insult_hostess(P) :- between_men(P).
 hostess(mrsD).
 place(mrsD,0).
 
@@ -26,4 +27,4 @@ place(mrsD,0).
 
 #hide.
 #show place/2.
-#show between_men/1.
+#show insult_hostess/1.
